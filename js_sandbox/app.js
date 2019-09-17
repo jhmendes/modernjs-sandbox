@@ -252,4 +252,81 @@ console.log(li);
 
 */
 
-/********** DOM Creating Elements **********/
+/********** DOM Replace and Remove Elements **********/
+
+
+/*
+//Replacing elements
+
+//create an element
+
+const newHeading = document.createElement('h2');
+
+newHeading.id = 'task-title';
+
+newHeading.appendChild(document.createTextNode('Task list'));
+
+
+//Get the old heading 
+
+const oldHeading = document.getElementById('task-title');
+
+//Get the parent of the old element
+
+const cardAction = document.querySelector('.card-action');
+
+cardAction.replaceChild(newHeading, oldHeading);
+
+console.log(newHeading);
+
+
+//Removing elements
+
+const lis = document.querySelectorAll('li');
+const list = document.querySelector('ul');
+
+//Remove list item 
+
+lis[0].remove();
+
+//Remove child element
+
+list.removeChild(lis[3]);
+
+
+
+//CLASSES AND ATTRIBUTES***********Important!
+
+const firstLi = document.querySelector('li:first-child');
+const link = firstLi.children[0];
+
+let val;
+
+//CLASSES
+val = link.className;
+val = link.classList;
+val = link.classList[0];
+
+//Add or remove classes
+link.classList.add('test');
+link.classList.remove('test');
+
+
+val = link;
+
+
+
+// Attributes  
+
+val = link.getAttribute('href');
+val = link.setAttribute('href','https://google.com');
+val = link.hasAttribute('href');
+link.setAttribute('title', 'Google');
+
+//Remove attribute
+
+link.removeAttribute('title');
+val = link;
+console.log(val);
+
+*/
