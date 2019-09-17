@@ -131,6 +131,7 @@ liOdd.forEach( (li, index) => {
 
 /********** DOM Traversal **********/
 
+/*
 let val; 
 const list = document.querySelector('ul.collection');
 const listItem = document.querySelector('li.collection-item:first-child');
@@ -198,3 +199,57 @@ val = listItem.previousElementSibling; // returns previous element node - this i
 
 console.log(val);
 console.dir(val);
+
+*/
+
+/********** DOM Creating Elements **********/
+
+/*
+
+//create element
+
+const li = document.createElement('li');
+
+//add a class
+
+li.className = 'collection-item';
+
+//add an id
+
+li.id = 'new-item';
+
+//add attribute 
+
+li.setAttribute('title', 'New Item');
+
+// Create text node and append it to the LI
+
+
+li.appendChild(document.createTextNode('Hello World'));
+
+//Create new link element 
+
+const link = document.createElement('a');
+
+//Add Class to the link 
+
+link.className = 'delete-item secondary-content';
+
+//Add Icon inside link
+
+link.innerHTML = '<i class="fa fa-remove"></i>';
+
+
+//Append link into li
+li.appendChild(link);
+
+//Append li as child to ul 
+
+document.querySelector('ul.collection').appendChild(li);
+
+
+console.log(li);
+
+*/
+
+/********** DOM Creating Elements **********/
