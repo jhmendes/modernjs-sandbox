@@ -330,3 +330,93 @@ val = link;
 console.log(val);
 
 */
+
+/********** Event Listeners and Event Object **********/
+
+/*
+//https://developer.mozilla.org/en-US/docs/Web/API/Event
+
+// document.querySelector('.clear-tasks').addEventListener('click', function(e) {
+//   e.preventDefault();
+//   console.log('testing');
+// });
+
+//can accept a named function
+document.querySelector('.clear-tasks').addEventListener('click', onClick);
+
+function onClick(e) {
+  e.preventDefault();
+  // console.log('testing with a named function');
+  let val;
+
+  
+  val = e;
+  //Event Target element
+
+  val = e.target;
+  val = e.target.className;
+  val = e.target.classList;
+  val = e.target.innerText = 'Hello';
+
+  //Event type
+  val = e.type;
+
+//Timestamp
+  val = e.timeStamp;
+
+
+//Coordinates relative to window
+
+val = e.clientY;
+val = e.clientX;
+
+//Coordinates relative to element itself
+val = e.offsetY;
+val = e.offsetX;
+  console.log(val);
+}
+*/
+
+/********** Mouse Events **********/
+
+const clearBtn = document.querySelector('.clear-tasks');
+const card = document.querySelector('.card');
+const heading = document.querySelector('h5');
+
+//Click event
+
+// clearBtn.addEventListener('click', runEvent);
+
+//Double click 
+clearBtn.addEventListener('dblclick', runEvent);
+
+//Mousedown and Mouseup
+clearBtn.addEventListener('mousedown', runEvent);
+clearBtn.addEventListener('mouseup', runEvent);
+
+
+//MouseEnter 
+card.addEventListener('mouseenter', runEvent);
+
+//Mouse leave 
+card.addEventListener('mouseleave', runEvent);
+
+
+//Mouse Over 
+card.addEventListener('mouseover', runEvent);
+
+//Mouse out
+
+card.addEventListener('mouseout', runEvent);
+
+//Mouse Move
+card.addEventListener('mousemove', runEvent);
+
+
+//Event Handler
+
+function runEvent(e) {
+  console.log(`Event Type ${e.type}`);
+  heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+  document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
+}
