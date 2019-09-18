@@ -379,6 +379,7 @@ val = e.offsetX;
 
 /********** Mouse Events **********/
 
+/*
 const clearBtn = document.querySelector('.clear-tasks');
 const card = document.querySelector('.card');
 const heading = document.querySelector('h5');
@@ -420,3 +421,62 @@ function runEvent(e) {
   heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
   document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
 }
+
+*/
+
+
+/********** Keyboard Events  **********/
+/*
+const form = document.querySelector('form');
+const taskInput = document.getElementById('task');
+const heading = document.querySelector('h5');
+
+//CLEAR THE INPUT VALUE
+taskInput.value = '';
+
+//Keydown
+// taskInput.addEventListener('keydown', runEvent);
+
+//Keyup
+// taskInput.addEventListener('keyup', runEvent);
+
+//Keypress
+// taskInput.addEventListener('keypress', runEvent);
+
+//Submit
+// form.addEventListener('submit', runEvent);
+//default behavior of form is to redirect to the href, must use preventDefault to stop this
+
+//Focus - click into an input
+// taskInput.addEventListener('focus', runEvent);
+
+//Blur - click outside of an input
+// taskInput.addEventListener('blur', runEvent);
+
+
+//Cut 
+// taskInput.addEventListener('cut', runEvent);
+//Copy 
+// taskInput.addEventListener('copy', runEvent);
+//Paste 
+// taskInput.addEventListener('paste', runEvent);
+
+
+//Input event - this gets ANY input event
+// taskInput.addEventListener('input', runEvent);
+
+//Change event - mainly for select inputs - if it changes, this event fires
+taskInput.addEventListener('change', runEvent);
+
+function runEvent(e) {
+  // e.preventDefault();
+
+  //Get input value****
+  // console.log(taskInput.value);
+
+  console.log(`Event Type: ${e.type}`);
+  // console.log(e.target.value);
+
+  // heading.innerText = e.target.value;
+}
+*/
