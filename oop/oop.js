@@ -24,7 +24,7 @@ console.log(leo);
 */
 
 /********** Built in Constructors **********/
-
+/*
 //String 
 
 const name1 = 'Leo';
@@ -43,14 +43,14 @@ console.log(typeof name2);
 const num1 = 5;
 const num2 = new Number(5);
 
-console.log(num2);
+console.log(typeof num2);
 
 //Boolean
 
 const bool1 = true;
 const bool2 = new Boolean(true);
 
-console.log(bool2);
+console.log(typeof bool2);
 
 
 //Function 
@@ -81,3 +81,98 @@ const arr2 = new Array(1, 2, 3);
 
 const re1 = /\w+/;
 const re2 = new RegExp('\w+');
+
+*/
+
+/********** Prototypes **********/
+
+//Object.prototype
+
+//Person.prototype 
+
+/*
+function Person(firstName, lastName, dob) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.birthday = new Date(dob);
+  // this.getAge = function() {
+  //     const diff = Date.now() - this.birthday.getTime();
+  //     const ageDate = new Date(diff);
+  //     return Math.abs(ageDate.getUTCFullYear() - 1970);
+  // }
+}
+
+//Get Age
+
+Person.prototype.getAge = function() {
+  const diff = Date.now() - this.birthday.getTime();
+  const ageDate = new Date(diff);
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
+Person.prototype.getFullName = function() {
+  return `${this.firstName} ${this.lastName}!`;
+}
+
+//Gets Married
+
+Person.prototype.getsMarried = function(newLastName) {
+  this.lastName = newLastName;
+}
+const john = new Person('John', 'Mendes', '02-08-1987');
+
+const meg = new Person('Meghan', 'Sullivan', 'March 1st, 1990');
+
+console.log(john);
+console.log(john.getAge());
+console.log(meg.getFullName());
+
+console.log(meg);
+meg.getsMarried('Mendes');
+console.log(meg);
+
+*/
+
+
+/********** Prototypal Inheritance **********/
+
+//Person Constructor
+
+function Person(firstname, lastname) {
+  this.firstname = firstname,
+  this.lastname = lastname
+
+}
+
+//Prototype method
+
+Person.prototype.greeting = function() {
+  return `Hello there ${this.firstname} ${this.lastname}`;
+}
+
+const person1 = new Person('John', 'Mendes');
+
+console.log(person1.greeting());
+
+
+
+
+//Custom Constructor
+
+function Customer(firstname, lastname, phone, membership) {
+Person.call(this, firstname, lastname);
+this.phone = phone; 
+this.membership = membership;
+}
+
+//Inherit Person Prototype methods
+
+Customer.prototype = Object.create(Person.prototype);
+
+// Customer.prototype.constructor = Customer;
+
+//Create a customer
+
+const customer1 = new Customer('Leo', 'Mendes', '999-999-9999', 'Standard');
+
+console.log(customer1);
