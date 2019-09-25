@@ -135,7 +135,7 @@ console.log(meg);
 
 
 /********** Prototypal Inheritance **********/
-
+/*
 //Person Constructor
 
 function Person(firstname, lastname) {
@@ -169,10 +169,114 @@ this.membership = membership;
 
 Customer.prototype = Object.create(Person.prototype);
 
-// Customer.prototype.constructor = Customer;
+console.log(Customer);
+
+Customer.prototype.constructor = Customer;
 
 //Create a customer
 
 const customer1 = new Customer('Leo', 'Mendes', '999-999-9999', 'Standard');
 
 console.log(customer1);
+
+*/
+
+/********** Object.create **********/
+
+/*
+
+const personPrototype = {
+  greeting: function() {
+    return `Hello there ${this.firstname} ${this.lastname}`;
+  }, 
+  changeLastName: function(newLastName)  {
+    return this.lastname = newLastName;
+  }
+ 
+}
+
+const newperson = Object.create(personPrototype);
+
+newperson.firstname = 'Tony';
+newperson.lastname = 'Stark';
+
+newperson.changeLastName('Rogers');
+
+// console.log(newperson);
+
+console.log(newperson.greeting());
+
+
+const person2 = Object.create(personPrototype, {
+  firstname: {value: 'John'},
+  lastname: {value: 'Mendes'}
+});
+
+console.log(person2);
+
+*/
+
+/********** ES6 Classes **********/
+
+class Person {
+  constructor(firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.birthday = new Date(dob);
+  }
+  greeting() {
+    return `Hey whats up, ${this.firstName} ${this.lastName}?`;
+  }
+
+  calculateAge() {
+    const diff = Date.now() - this.birthday.getTime();
+    const ageDate = new Date(diff);
+    console.log(ageDate.getUTCFullYear());
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  }
+
+  static addNums(x, y) {
+    return x+y; 
+  }
+}
+
+const person1 = new Person('John', 'Mendes', '02-08-1987');
+
+console.log(person1);
+console.log(person1.greeting());
+console.log(person1.calculateAge());
+
+console.log(Person.addNums(2, 2));
+
+
+/********** ES6 Subclasses (similar to prototypal inheritance **********/
+
+  class Person2 {
+    constructor(firstName, lastName) {
+      this.firstName = firstName;
+      this.lastName = lastName;  
+    }
+
+    greeting() {
+      return `${this.firstName}, ${this.lastName}`;
+    }
+  }
+
+
+  class Customer extends Person2 {
+    constructor(firstName, lastName, phone, membership) {
+      super(firstName, lastName);
+      this.phone = phone;
+      this.membership = membership;
+    }
+
+    static getMembershipCost() {
+      return 500;
+    }
+  }
+
+  const newCustomer = new Customer('Leo', 'Mendes', '999-999-8888', 'Premium');
+
+  console.log(newCustomer);
+  console.log(newCustomer.greeting());
+  console.log(Customer.getMembershipCost());
