@@ -19,9 +19,9 @@ function loadData() {
 
   //Optional for spinners/loaders
 
-  xhr.onprogress = function() {
-    console.log(xhr.readyState);
-  }
+  // xhr.onprogress = function() {
+  //   console.log(xhr.readyState);
+  // }
 
   // xhr.onreadystatechange = function() {
     // console.log(xhr.readyState);

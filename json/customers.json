@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "John Mendes",
+      "company": "XYZ Company",
+      "phone": "999-999-9999"
+    }, 
+    {
+      "id": 2,
+      "name": "Leo Mendes",
+      "company": "Pellet Factory",
+      "phone": "1-800-CARROT"
+      }, 
+      {
+        "id": 3,
+        "name": "Meghan Mendes",
+        "company": "XYZ Design",
+        "phone": "999-999-9999"
+        }
+]
+  
