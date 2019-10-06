@@ -24,14 +24,14 @@ http.post('https://jsonplaceholder.typicode.com/users', data)
 
 //Create Post
 
-http.put('https://jsonplaceholder.typicode.com/users/2 ', data)
-.then(data => console.log(data))
-.catch(err => console.log(err));
+// http.put('https://jsonplaceholder.typicode.com/users/2 ', data)
+// .then(data => console.log(data))
+// .catch(err => console.log(err));
 
 //Delete a post
 
 
 
-http.delete('https://jsonplaceholder.typicode.com/users/2')
-.then(data => console.log(data))
-.catch(err => console.log(err));
+// http.delete('https://jsonplaceholder.typicode.com/users/2')
+// .then(data => console.log(data))
+// .catch(err => console.log(err));
